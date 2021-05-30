@@ -1,0 +1,14 @@
+<section>
+  {{#if count}}
+    <h1>Popular Shows</h1>
+    <ol>
+      {{#each searchCount}}
+        <li>
+          {{@key}} ({{this}})
+        </li>
+      {{/each}}
+    </ol>
+  {{else}}
+    <p class="not-found">We're sorry, but no search results were found.</p>
+  {{/if}}
+</section>

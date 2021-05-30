@@ -1,0 +1,21 @@
+{
+  "name": "cs-554-lab-6",
+  "version": "1.0.0",
+  "description": "Binterest GraphQL Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./app.js localhost 4000"
+  },
+  "author": "Sonali Chavan 10459154",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.12.0",
+    "apollo-server": "^2.23.0",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "graphql": "^15.5.0",
+    "ioredis": "^4.27.1",
+    "nodemon": "^2.0.7",
+    "redis": "^3.1.2"
+  }
+}

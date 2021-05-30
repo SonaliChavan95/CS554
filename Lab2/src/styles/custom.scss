@@ -1,0 +1,56 @@
+@import "variables";
+@import "./src/styles/bootstrap/scss/bootstrap";
+
+// TODO: import only required components
+
+
+// @import "functions";
+// @import "mixins";
+// @import "root";
+// @import "reboot";
+// @import "type";
+// @import "images";
+// @import "code";
+// @import "grid";
+// @import "card";
+// @import "modal";
+
+.movie-list {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+div.#{$card-class} {
+  .movie-img {
+    img {
+      height: 176px;
+    }
+  }
+
+  .card-body p {
+    font-size: $primary-font-size;
+  }
+}
+
+div.#{$sidebar-class} {
+
+  // sticky sidebar
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-size: $primary-font-size;
+  background-color: $sidebar-background-color;
+
+  .list-group-item {
+    background-color: $sidebar-background-color;
+
+    a {
+      font-weight:450;
+      color: $gray-900;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<section>
+  {{#if shows.length}}
+    <h1>TV Shows</h1>
+    <ul>
+      {{#each shows}}
+        <li>
+          <a href="/show/{{id}}" class="show-link" aria-label="Show name: {{name}}">{{name}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="not-found">We're sorry, but no results were found.</p>
+  {{/if}}
+</section>

@@ -1,0 +1,72 @@
+<main>
+  <section>
+    {{#if movieList.length}}
+      <div class="row">
+        <div class="col-12 col-sm-2 sidebar-menu">
+          <h1 class="text-center">{{pageTitle}}</h1>
+          <ul class="list-group list-group-flush">
+            {{#each movieList}}
+              <li class="list-group-item" >
+                <a href="#{{ anchorName this.title }}"> {{this.title}} </a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-10 movie-list">
+          <div class="row">
+            {{#each movieList}}
+              <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="card movie" id="{{ anchorName this.title}}">
+                  <div class="movie-img">
+                    <img class="card-img-top" src="/public/img/{{this.image}}" alt="{{anchorName this.title}}">
+                  </div>
+
+                  <div class="card-body">
+                    <h2 class="card-title">{{this.title}}</h2>
+                    <p class="card-text">{{ truncate this.plot}}</p>
+
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#movie{{this._id}}Modal">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="movie{{this._id}}Modal" tabindex="-1" role="dialog" aria-labelledby="movie{{this._id}}Title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="movie{{this._id}}Title">{{this.title}}</h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <img class="card-img-top" src="/public/img/{{this.image}}" alt="{{anchorName this.title}}">
+                      <br>
+                      {{this.plot}}
+                      <br>
+                      <span class="font-weight-bold">Released Year: </span> {{this.info.yearReleased}}
+                      <br>
+                      <span class="font-weight-bold">Director: </span> {{this.info.director}}
+                      <br>
+                      <span class="font-weight-bold">Rating: </span> {{this.rating}}
+                      <br>
+                      <span class="font-weight-bold">Cast: </span> {{castList this.cast}}
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+    {{else}}
+      <p class="not-found">We're sorry, no movies found.</p>
+    {{/if}}
+  </section>
+</main>
